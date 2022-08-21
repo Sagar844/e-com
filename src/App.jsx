@@ -2,15 +2,19 @@ import React from "react";
 import Navbar from "./Navbar";
 import Product from "./Product";
 import Footer from "./Footer";
-import Dropdown from './Dropdown'
+import Dropdown from "./Dropdown";
+import ProductDetails from "./ProductDetails";
+
+
+
 
 function App() {
   return (
-    <div className="bg-gray-100 lg:bg-green-200" >
+    <div className="bg-gray-100 lg:bg-gradient-to-r from-cyan-500 to-blue-500" >
       <Navbar logo="https://trycasuals.com/wp-content/uploads/2019/06/print-1-1.svg"></Navbar>
 
 
-      <div className=" p-2 flex flex-wrap justify-center  mt-10 bg-white ronded-lg ml-10 mr-10   " >
+      <div className=" p-2 flex flex-wrap justify-center  mt-10 bg-white rounded-md ml-10 mr-10   " >
 
         <Dropdown></Dropdown>
 
@@ -41,8 +45,14 @@ function App() {
 
       <Footer ></Footer>
 
+      <div>
 
 
+        <ProductDetails></ProductDetails>
+
+
+
+      </div>
     </div>
 
 

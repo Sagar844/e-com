@@ -3,8 +3,11 @@ import React from 'react'
 function Product(data) {
   return (
     <div>
-     
+
+
+
       <div className='  m-5  ' >
+
         <img src={data.pic} />
       </div>
       <div className=" ml-5 ">
