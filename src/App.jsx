@@ -21,17 +21,17 @@ function App() {
         <Product pic="https://trycasuals.com/wp-content/uploads/2018/06/mug-yellow-4-300x300.jpg" productName="Black Printed Coffee Mug" category="Mugs" price="$ 50"  > </Product>
 
 
-        <Product pic="https://trycasuals.com/wp-content/uploads/2018/06/mug-white-4-300x300.jpg" productName="Black Printed Coffee Mug" category="Mugs" price="$ 50"  ></Product>
+        <Product pic="https://trycasuals.com/wp-content/uploads/2018/06/mug-white-4-300x300.jpg" productName="Black Printed Coffee Mug" category="Mugs" price="$ 60"  ></Product>
 
-        <Product pic="https://trycasuals.com/wp-content/uploads/2018/06/tshirt4-4-300x300.jpg" productName="Printed Dark Blue Tshirt" category="T-shirt" price="$ 50"></Product>
+        <Product pic="https://trycasuals.com/wp-content/uploads/2018/06/tshirt4-4-300x300.jpg" productName="Printed Dark Blue Tshirt" category="T-shirt" price="$ 70"></Product>
 
-        <Product pic="https://trycasuals.com/wp-content/uploads/2018/06/tshirt6-4-300x300.jpg" category="T-shirt" productName="Printed Dark Blue Tshirt" price="$ 50" ></Product>
+        <Product pic="https://trycasuals.com/wp-content/uploads/2018/06/tshirt6-4-300x300.jpg" category="T-shirt" productName="Printed Dark Blue Tshirt" price="$ 80" ></Product>
 
-        <Product pic="https://trycasuals.com/wp-content/uploads/2018/06/tshirt5-4-300x300.jpg" productName="Black Printed Coffee Mug" category="T-shirt" price="$ 50"></Product>
+        <Product pic="https://trycasuals.com/wp-content/uploads/2018/06/tshirt5-4-300x300.jpg" productName="Black Printed Coffee Mug" category="T-shirt" price="$ 100"></Product>
 
         <Product pic="https://trycasuals.com/wp-content/uploads/2018/06/tshirt3-4-300x300.jpg " category="T-shirt" productName="Printed Dark Blue Tshirt" price="$ 50" ></Product>
 
-        <Product pic="https://trycasuals.com/wp-content/uploads/2018/06/tshirt7-4-300x300.jpg" category="T-shirt" productName="Printed Dark Blue Tshirt" price="$ 50"></Product>
+        <Product pic="https://trycasuals.com/wp-content/uploads/2018/06/tshirt7-4-300x300.jpg" category="T-shirt" productName="Printed Dark Blue Tshirt" price="$ "></Product>
 
         <Product pic="https://trycasuals.com/wp-content/uploads/2018/06/mug-yellow-4-300x300.jpg" category="Mugs" productName="Black Printed Coffee Mug" price="$ 50"></Product>
 

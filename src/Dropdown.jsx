@@ -10,6 +10,21 @@ function Dropdown() {
         <h1 className="text-3xl text-orange-500 mt-2">Shop</h1>
         <h1 className="mt-5">Showing 1–9 of 11 results</h1>
       </div>
+      <div className="mt-10 ml-40">
+
+        <input className="border border-blue-500 p-2 rounded-md" type="text" placeholder="Search" />
+
+
+
+
+
+      </div>
+
+
+
+
+
+
       <div className="ml-auto mt-auto mr-40 mb-10 sm:flex text-center  ">
         <select className=" rounded-sm border-2 ">
           <option> Default Sorting </option>

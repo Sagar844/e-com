@@ -8,7 +8,7 @@ function Product(data) {
 
       <div className='  m-5  ' >
 
-        <img src={data.pic} />
+        <img className="rounded-sm" src={data.pic} />
       </div>
       <div className=" ml-5 ">
         <h1 className="text-gray-400"> {data.category}</h1>
