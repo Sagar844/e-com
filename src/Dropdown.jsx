@@ -1,8 +1,13 @@
 import React from 'react'
 
 function Dropdown() {
+
+
+
+
+
   return (
-    <div className="flex h-32 w-full">
+    <div className="flex h-32 w-full mt-5">
 
       <div className="ml-24 hidden sm:flex lg:flex-col   ">
 
@@ -12,39 +17,14 @@ function Dropdown() {
       </div>
       <div className="mt-10 ml-40">
 
-        <input className="border border-blue-500 p-2 rounded-md" type="text" placeholder="Search" />
 
 
 
 
 
       </div>
-
-
-
-
-
-
-      <div className="ml-auto mt-auto mr-40 mb-10 sm:flex text-center  ">
-        <select className=" rounded-sm border-2 ">
-          <option> Default Sorting </option>
-          <option>Short by Popularity</option>
-          <option>Short by Average Rating</option>
-          <option>Short by letest </option>
-          <option> Short by price : low to high</option>
-          <option> Short by price : high to low</option>
-        </select>
-      </div>
-
-
 
     </div>
-
-
-
-
-
-
 
 
   )

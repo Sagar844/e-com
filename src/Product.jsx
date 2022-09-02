@@ -1,31 +1,17 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
-function Product(data) {
+function Product({ title, price, category, thumbnail, id }) {
   return (
-    <div>
 
-
-
-      <div className='  m-5  ' >
-
-        <img className="rounded-sm" src={data.pic} />
-      </div>
-      <div className=" ml-5 ">
-        <h1 className="text-gray-400"> {data.category}</h1>
-        <h1 className="text-lg text-black hover:text-red-500"> {data.productName}</h1>
-        <h1 className="text-orange-500">{data.price}</h1>
-
-
-
-
-      </div>
+    <div className=" mt-5" >
+      <Link className="  " to={"/products/" + id}>
+        <img className="rounded-md " src={thumbnail} />
+        <div className="text-bold ">{title} </div>
+        <div>{category} </div>
+        <div> Rs.{price} </div>
+      </Link>
     </div>
-
-
-
-
-
-
 
   );
 }
