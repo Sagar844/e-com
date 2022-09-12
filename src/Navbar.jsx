@@ -1,33 +1,55 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { BsCartCheck } from 'react-icons/bs';
 
-import React from 'react'
-
-
-function Navbar(data) {
-
-
+function Navbar({ Productcount }) {
   return (
-
-    <div className="bg-white py-8 flex items-center shadow-sm  ">
-      <div className="" >
-        <img className='ml-5  w-40' src={data.logo} />
+    <div className="bg-white py-4 flex items-center shadow-sm  ">
+      <div className="">
+        <Link to="/">
+          <img
+            className="ml-5  w-30"
+            src="https://trycasuals.com/wp-content/uploads/2019/06/print-1-1.svg"
+          />
+        </Link>
       </div>
-      <div className='flex space-x-5 ml-auto  items-center hidden sm:flex   '>
- 
-        <h1 className='hover:text-red-500 '>HOME</h1>
+
+      <div className="flex space-x-10 ml-auto hidden sm:flex   ">
 
 
-        <h1 className='hover:text-red-500 '> CONTACT</h1>
-        <h1 className='hover:text-red-500 '> ACCOUNT</h1>
+        <Link className="text-xl font-bold" to="/Profile">Profile</Link>
 
+        <div className=" lg:flex lg:mr-16 lg:ml-10   hidden sm:flex s ">
+          <Link to="Cart">
+            <BsCartCheck className="text-green-500 text-3xl hover:text-orange-500" />
+          </Link>
+          <span className="bg-blue-400 text-white rounded-full px-2 mr-5 py-1">{Productcount}</span>
+
+        </div>
 
       </div>
-      <div className="ml-72 lg:flex lg:mr-16 mr-8 lg:mr-0 lg:ml-10 w-40    ">
-        <img src="https://cdn.discordapp.com/attachments/998764908479004743/1007740290695712798/unknown.png" />
 
+      <div className=" space-x-5 ml-20">
+        <Link
+          className="bg-orange-500 px-3 py-3 rounded-lg hover:bg-indigo-400  text-white"
+          to="/Signup"
+        >
+          Signup
+				</Link>
+
+        <Link
+          className="bg-green-500 px-3 py-3 rounded-lg hover:bg-indigo-500  text-white"
+          to="Loginpage"
+        >
+          {' '}
+          Login
+				</Link>
       </div>
+
+
 
     </div>
-  )
+  );
 }
 
 export default Navbar;

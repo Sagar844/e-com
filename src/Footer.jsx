@@ -1,87 +1,74 @@
-import React from 'react'
 
-function Footer(data) {
+import React from "react";
+import { Link } from 'react-router-dom';
 
+
+function Footer() {
   return (
-    <div className="bg-black lg:bg-gray-500 p-5 mt-10 flex" >
-      <div className="w-1/4" >
-        <img className="ml-5 mt-10" src="https://trycasuals.com/wp-content/uploads/2019/06/print-favicon-free-img-1.png" />
-        <h1 className="text-2xl text-white mt-10">Made With ♥️
- CodeYogi</h1>
+    <div className="bg-gray-800 text-white lg:flex space-x-5 mt-15 ">
+      <div className="space-y-5 mt-16 ml-10">
+        <h1>Aparax</h1>
+        <h1 className=" mr-20">
+          Semper nibh a dignissim Integer cursus tempsed quis justo molis starm
+          facilisis shriking from toil the semper consectetur.
+        </h1>
 
-        <div className="flex mt-10  space-x-5 w-1/4  ">
-          <img className="w-8 h-8 animate-spin" src="https://img.icons8.com/color/48/000000/facebook-new.png" />
-          <img className="w-8 h-8 " src="https://cdn.discordapp.com/attachments/1001168177952211054/1008020919194751108/output-onlinegiftools.gif" />
-          <img className="w-8 h-8" src="https://cdn.discordapp.com/attachments/1001168177952211054/1008022994758676501/output-onlinegiftools_1.gif" />
-          <img className="w-8 h-8" src="https://cdn.discordapp.com/attachments/1001168177952211054/1008024345089683496/output-onlinegiftools_2.gif" />
+        <div>
 
+          <Link
+            className="bg-green-500 px-3 py-3 rounded-lg   text-white  hover:bg-indigo-500 "
+            to="Contact"
+          >
+            {' '}
+            Contact Us
+				</Link>
         </div>
-      </div>
-
-      <div className="text-center mt-20 w-1/4 mr-10 "  >
-        <h1 className="text-xl text-white hover:text-red-500 ">Get in Touch with Us for the Best Quality Custom Prints & Supplies.</h1>
-        <p className="text-sm text-white hover:text-red-500">Qui dolore ipsum quia dolor sit amet, consec tetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores taporro ame.</p>
-
-
 
       </div>
+      <div className="space-y-5 mt-16  ">
 
-      <div className="mt-20 w-1/4" >
-        <h1 className="text-xl text-white ">Quick Links.</h1>
-        <p className="text-sm text-white hover:text-red-500 ">Know More About Us<br></br>
-          Visit Store
-Let’s Connect.</p>
-
+        <h1>Latest news</h1>
+        <h1 className=" mr-32">Get in Touch with Us for the Best Quality Custom Prints & Supplies..</h1>
+        <h1 className="mr-32">Qui dolore ipsum quia dolor sit amet, consec tetur adipisci velit, sed quia non numquam eius modi tempora incidunt lores taporro ame</h1>
 
 
       </div>
 
+      <div className="space-y-5 mt-16">
 
+        <h1>Features</h1>
+        <h1>Features</h1>
+        <h1>About</h1>
+        <h1>Testimonial
+</h1>
+        <h1>Video</h1>
+        <h1>pricing</h1>
+        <h1>Team</h1>
 
+      </div>
 
+      <div className="space-y-5 mt-16 mr-16">
 
-
-      <div className="mt-20 w-1/4 ">
-        <h1 className="text-xl text-white ">Important Links</h1>
-        <p className="text-sm text-white hover:text-red-500">Privacy Policy
-Shipping Details
-Terms & Condition</p>
+        <h1>Get in Touch</h1>
+        <h1> 538 Whispering City Pins</h1>
+        <h1>+(425) 972-424-8147</h1>
+        <h1>JasonCHarris@teleworm.us</h1>
+        <h1>Patrickellmer@armyspy.com</h1>
 
 
 
       </div>
-
-
-
-
-
-
-
 
 
     </div>
-
-
-
-
-
-
-
-
   );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
 export default Footer;
+
+
+
+
+
+
+

@@ -1,24 +1,34 @@
 import React, { useState, useEffect } from 'react'
 
+
 import Productlist from "./Productlist";
 import { getProductList } from "./api";
+import Loading from "./Loading";
+
 
 
 function Productpage() {
 
 
-  console.log("app commponent is runing")
+
+
+
   const [productList, setProductList] = useState([]);
+
+
+
 
   const [Query, setQuery] = useState("");
   const [sort, setSort] = useState("");
+  const [loding, setLoading] = useState(true)
 
   useEffect(function() {
     const xyz = getProductList();
 
-    xyz.then(function(respons) {
+    xyz.then(function(products) {
 
-      setProductList(respons.data.products)
+      setProductList(products)
+      setLoading(false);
     });
 
 
@@ -30,8 +40,12 @@ function Productpage() {
 
 
 
+
+
+
   let data = productList.filter(function(item) {
     const lowerCaseTitle = item.title.toLowerCase();
+      
     const lowerCaseQuery = Query.toLowerCase();
     return lowerCaseTitle.indexOf(lowerCaseQuery) != -1;
   });
@@ -56,16 +70,16 @@ function Productpage() {
     setSort(event.target.value);
 
   }
+  if (loding) {
+    return <Loading />
 
-
-
-
+  }
 
 
   return (
     <div>
 
-      <div className=" mt-auto mr-40 mb-10 sm:flex text-center flex justify-end ">
+      <div className=" flex justify-end mt-10 mr-20  ">
         <select className=" rounded-sm border-2 " onChange={handlesortchange} value={sort} >
           <option value="default"> Default Sorting </option>
           <option value="price"> Short by price : high to low</option>
@@ -74,7 +88,7 @@ function Productpage() {
         </select>
       </div>
 
-      <div className=" flex justify-center  ">
+      <div className=" flex justify-center mt-5   ">
 
         <input value={Query} onChange={handlechange} className="border  border-blue-500 rounded-md px-5 py-2 " placeholder="search" />
 

@@ -7,7 +7,7 @@ function ProductList({ Products }) {
 
   return (
 
-    <div className="bg-white rounded-md ml-10 mr-10 flex gap-5 flex-row flex-wrap justify-center mt-5  ">
+    <div className="bg-white md:grid grid-cols-3 gap-2  mr-10 ml-10 rounded-md  ">
       {Products.map(function(item) {
         return (
 
