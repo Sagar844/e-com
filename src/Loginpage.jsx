@@ -67,7 +67,7 @@ function Loginpage() {
           className="border-2 solid border-orange-500 rounded-md px-16 py-3"
         ></input>
         <br></br> <br></br>
-        <div className="text-2xl font-bold text-red-500">{errmes}</div>
+        <div className="text-2xl font-bold text-red-500 animate-bounce">{errmes}</div>
         <button
           className="bg-orange-500 text-white py-3 px-5 rounded-md disabled:bg-gray-400" disabled={subtndisable} onClick={handlesubmit}
           type="submit"

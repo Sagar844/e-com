@@ -17,7 +17,7 @@ function Navbar({ Productcount }) {
       <div className="flex space-x-10 ml-auto hidden sm:flex   ">
 
 
-        <Link className="text-xl font-bold" to="/Profile">Profile</Link>
+        <Link className="text-xl " to="/Profile">Profile</Link>
 
         <div className=" lg:flex lg:mr-16 lg:ml-10   hidden sm:flex s ">
           <Link to="Cart">

@@ -93,7 +93,7 @@ function Contact() {
         <input
           placeholder="Enter Your Phonenumber"
           name="phonenumber"
-          type="number"
+          type="tel"
           className="border-2 solid border-orange-500 rounded-md px-16 py-3 text-center"
           value={user.phonenumber}
           onChange={getuserdata}
@@ -121,7 +121,7 @@ function Contact() {
 
       </form>
 
- 
+
     </div>
   );
 }

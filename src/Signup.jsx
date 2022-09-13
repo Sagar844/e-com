@@ -36,6 +36,8 @@ function Signup() {
       .catch((err) => {
         setbtndisable(false);
         console.log("error", err);
+        seterrmes(err.message);
+
       })
   };
 
@@ -73,19 +75,19 @@ function Signup() {
             name="password"
             type="Password"
             autoComplete="on"
-            
+
             onChange={(event) =>
               SetValues((prev) => ({ ...prev, password: event.target.value }))
-              
-              
-              
+
+
+
             }
 
-            
+
             className="border-2 solid border-orange-500 rounded-md px-16 py-3"
           ></input>
           <br></br> <br></br>
-          <div>{errmes}</div>
+          <div className="text-red-500 animate-bounce text-2xl mb-5">{errmes}</div>
           <button
             className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white py-3 px-5 rounded-md disabled:bg-gray-500"
             disabled={subtndisable} onClick={handlesubmit}
