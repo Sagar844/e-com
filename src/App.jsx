@@ -11,6 +11,9 @@ import Signup from './Signup';
 import { auth } from './firebase';
 import Profile from './Profile';
 
+
+
+
 function App() {
 	const saveddatastring = localStorage.getItem('my-cart') || '{}';
 	const savedData = JSON.parse(saveddatastring);
@@ -51,8 +54,11 @@ function App() {
 	// }, []);
 
 	return (
-		<div className="bg-gray-300 lg:bg-gray-300 h-screen overflow-scroll flex flex-col">
+		<div className="bg-gray-300 lg:bg-gray-300 h-screen overflow-x-scroll flex flex-col"> 
+      
 			<Navbar Productcount={totalcount} />
+ 
+   
 
 			<div
 				className="

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Sidemenu from './Sidemenu';
+
 import { BsCartCheck } from 'react-icons/bs';
 
 function Navbar({ Productcount }) {
@@ -14,40 +16,44 @@ function Navbar({ Productcount }) {
         </Link>
       </div>
 
-      <div className="flex space-x-10 ml-auto hidden sm:flex   ">
-
-
-        <Link className="text-xl " to="/Profile">Profile</Link>
-
-        <div className=" lg:flex lg:mr-16 lg:ml-10   hidden sm:flex s ">
-          <Link to="Cart">
-            <BsCartCheck className="text-green-500 text-3xl hover:text-orange-500" />
-          </Link>
-          <span className="bg-blue-400 text-white rounded-full px-2 mr-5 py-1">{Productcount}</span>
-
-        </div>
+      <div className="flex   space-x-10 ml-auto hidden sm:flex   ">
+        <Link className="text-xl " to="/Profile">
+          Profile
+				</Link>
+      </div>
+      <div className=" lg:flex lg:mr-16 lg:ml-10   hidden sm:flex  ">
+        <Link to="Cart">
+          <BsCartCheck className="text-green-500 text-3xl hover:text-orange-500" />
+        </Link>
+        <span className="bg-blue-400 text-white rounded-full px-2 mr-5 py-1">
+          {Productcount}
+        </span>
 
       </div>
 
-      <div className=" space-x-5 ml-20">
+      <div className=" space-x-5 ml-20 hidden sm:flex">
         <Link
           className="bg-orange-500 px-3 py-3 rounded-lg hover:bg-indigo-400  text-white"
           to="/Signup"
         >
           Signup
 				</Link>
-
-        <Link
-          className="bg-green-500 px-3 py-3 rounded-lg hover:bg-indigo-500  text-white"
-          to="Loginpage"
-        >
-          {' '}
-          Login
-				</Link>
       </div>
 
+      <Link
+        className="bg-green-500 px-3 py-3 ml-2 rounded-lg hover:bg-indigo-500  hidden sm:flex text-white"
+        to="Loginpage"
+      >
+        {' '}
+        Login
+				</Link>
+      <div className="flex sm:hidden ml-40"
+      >
 
 
+
+        <Sidemenu />
+      </div>
     </div>
   );
 }

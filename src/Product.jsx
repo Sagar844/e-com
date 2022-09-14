@@ -7,7 +7,7 @@ function Product({ title, price, category, thumbnail, id, }) {
       <div className="w-full aspect-square">
         <Link className="  " to={'/products/' + id}>
           <img
-            className="w-full h-full object-cover rounded-md "
+            className="w-full h-full object-cover rounded-md  "
             src={thumbnail}
           />
           <div className="text-bold  ">{title} </div>

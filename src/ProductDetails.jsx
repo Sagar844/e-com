@@ -113,29 +113,20 @@ function ProductDetails({ onaddtocart }) {
             </div>
 
           </div>
-          <div className=" ">
+          <div className="mr-20">
 
             <Link className="bg-indigo-500 p-2 rounded-md hover:bg-orange-500 " to="/">  Back </Link>
           </div>
-
-
         </div>
-
-
-
 
       </div >
       <div className="text-3xl text-bold ml-10">You might be interested in</div>
       <div className="mt-5">
-
         <Productlist Products={data} />
 
       </div>
 
     </>);
-
-
-
 }
 
 export default (ProductDetails);

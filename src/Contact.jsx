@@ -51,7 +51,7 @@ function Contact() {
 
   return (
 
-    <div className=" p-5  bg-gradient-to-r from-indigo-500 flex items-center  justify-center ">
+    <div className=" p-5  bg-gradient-to-r from-indigo-500 flex items-center  justify-center overflow-x-hidden">
       <form method="POST" className=" space-y-5 mt-10 bg-white px-40 py-20 rounded-md text-center  ">
         <div className="text-3xl font-bold  mb-5">Ask Your Queries</div>
         <label className="text-2xl text-bold">Name</label>

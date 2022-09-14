@@ -1,14 +1,14 @@
 import React from "react"
-import { TbFidgetSpinner } from 'react-icons/tb';
+import { CgSpinner } from 'react-icons/cg';
 
 function Loading() {
 
   return (
 
 
-    <div className="text-green-500 text-3xl  grow-1 flex items-center mt-52 justify-center">
+    <div className="text-green-500 text-3xl  grow-1 flex items-center mt-52 mb-20 justify-center">
 
-      <TbFidgetSpinner className="animate-spin text-6xl" />
+      <CgSpinner className="animate-spin text-4xl" />
     </div>
 
 

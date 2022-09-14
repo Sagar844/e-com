@@ -15,6 +15,7 @@ function Signup() {
   const [errmes, seterrmes] = useState("");
   const [subtndisable, setbtndisable] = useState(false);
 
+
   const handlesubmit = () => {
     if (!values.name || !values.email || !values.password) {
       seterrmes("fill ALL DATA");
@@ -23,9 +24,11 @@ function Signup() {
     seterrmes("");
     setbtndisable(true);
 
+
     createUserWithEmailAndPassword(auth, values.email, values.password)
       .then(async (res) => {
         setbtndisable(false);
+
         const user = res.user;
         await updateProfile(user, {
           displayName: values.name,
@@ -39,6 +42,8 @@ function Signup() {
         seterrmes(err.message);
 
       })
+
+
   };
 
   return (
@@ -79,11 +84,7 @@ function Signup() {
             onChange={(event) =>
               SetValues((prev) => ({ ...prev, password: event.target.value }))
 
-
-
             }
-
-
             className="border-2 solid border-orange-500 rounded-md px-16 py-3"
           ></input>
           <br></br> <br></br>
