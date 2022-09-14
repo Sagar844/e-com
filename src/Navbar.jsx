@@ -21,7 +21,7 @@ function Navbar({ Productcount }) {
           Profile
 				</Link>
       </div>
-      <div className=" lg:flex lg:mr-16 lg:ml-10   hidden sm:flex  ">
+      <div className=" flex justify-center ml-20   ">
         <Link to="Cart">
           <BsCartCheck className="text-green-500 text-3xl hover:text-orange-500" />
         </Link>
@@ -49,9 +49,6 @@ function Navbar({ Productcount }) {
 				</Link>
       <div className="flex sm:hidden ml-40"
       >
-
-
-
         <Sidemenu />
       </div>
     </div>
