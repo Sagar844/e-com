@@ -37,10 +37,10 @@ function Loginpage() {
 
 
   return (
-    <div className=" p-5 bg-gradient-to-r from-indigo-500 h-screen flex items-center  justify-center space-y-5">
+    <div className=" p-5 bg-[url('https://cdn.discordapp.com/attachments/1001168177952211054/1019485159269072916/4kmanzara.4d0fb49d.webp')] h-screen flex items-center  justify-center space-y-5">
       <form
         method="POST"
-        className="bg-white px-10 py-20 rounded-md text-center space-y-5 mt-30"
+        className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-10 py-20 rounded-md text-center space-y-5 mt-30"
       >
         <label>Email:</label>
         <br></br>
@@ -69,7 +69,7 @@ function Loginpage() {
         <br></br> <br></br>
         <div className="text-2xl font-bold text-red-500 animate-bounce">{errmes}</div>
         <button
-          className="bg-orange-500 text-white py-3 px-5 rounded-md disabled:bg-gray-400" disabled={subtndisable} onClick={handlesubmit}
+          className="bg-orange-500 text-white py-3 px-5 rounded-md disabled:bg-blue-600" disabled={subtndisable} onClick={handlesubmit}
           type="submit"
         >
           Login

@@ -51,7 +51,7 @@ function Contact() {
 
   return (
 
-    <div className=" p-5  bg-gradient-to-r from-indigo-500 flex items-center  justify-center overflow-x-hidden">
+    <div className=" p-5  bg-[url('https://cdn.discordapp.com/attachments/1001168177952211054/1019485159269072916/4kmanzara.4d0fb49d.webp')] flex items-center  justify-center overflow-x-hidden">
       <form method="POST" className=" space-y-5 mt-10 bg-white px-40 py-20 rounded-md text-center  ">
         <div className="text-3xl font-bold  mb-5">Ask Your Queries</div>
         <label className="text-2xl text-bold">Name</label>
@@ -60,6 +60,7 @@ function Contact() {
           placeholder="Enter name"
           type="text"
           name="name"
+          autoComplete="on"
           className="border-2 solid border-orange-500 rounded-md px-16 py-3"
           value={user.name}
           onChange={getuserdata}
@@ -72,6 +73,7 @@ function Contact() {
           placeholder="Enter your lastname"
           type="Text"
           name="lastname"
+          autoComplete="on"
           className="border-2 solid border-orange-500 rounded-md px-16 py-3"
           value={user.lastname}
           onChange={getuserdata}
@@ -83,6 +85,7 @@ function Contact() {
         <input
           placeholder="Enter your email"
           name="email"
+          autoComplete="on"
           className="border-2 solid border-orange-500 rounded-md px-16 py-3"
           value={user.email}
           onChange={getuserdata}
@@ -93,6 +96,7 @@ function Contact() {
         <input
           placeholder="Enter Your Phonenumber"
           name="phonenumber"
+          autoComplete="on"
           type="tel"
           className="border-2 solid border-orange-500 rounded-md px-16 py-3 text-center"
           value={user.phonenumber}
@@ -104,6 +108,7 @@ function Contact() {
         <textarea
           placeholder=" Enter Your Quriy"
           name="message"
+          autoComplete="on"
           type="text"
           className="border-2 solid border-orange-500 rounded-md px-16 py-3 text-center"
           value={user.message}

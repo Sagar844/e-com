@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getProductData } from "./api"
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
@@ -6,6 +6,7 @@ import Loading from "./Loading";
 import DataNotFound from "./DataNotFound"
 import { getProductList } from "./api";
 import Productlist from "./Productlist";
+import { memo } from "react";
 
 
 function ProductDetails({ onaddtocart }) {
@@ -51,6 +52,11 @@ function ProductDetails({ onaddtocart }) {
 
   let data = productList;
 
+//   useEffect(() =>{
+
+// console.log("ProductDetails run")
+//   },[])
+
   const btn = () => {
 
     setCounter(count + 1)
@@ -61,11 +67,15 @@ function ProductDetails({ onaddtocart }) {
     setCounter(count - 1)
 
   }
-  function handlebuttonclick() {
+ const  handlebuttonclick = useCallback(
+function () {
     onaddtocart(id, count)
+setCounter(1)
+  },
+[id,count]
 
-  }
-
+  
+ ) 
 
 
 
@@ -91,13 +101,15 @@ function ProductDetails({ onaddtocart }) {
             <TransformComponent>
 
 
-              <img className="rounded-md w-full h-full max-w-md object-cover " src={product.thumbnail} />
+              <img className="rounded-md w-full h-full max-w-md object-cover border-2 border-gray-400 " src={product.thumbnail} />
+              
             </TransformComponent>
           </TransformWrapper>
           <div className="">
             <div className="text-bold text-red-500 text-3xl ">{product.title} </div>
             <div className="text-xl font-bold">{product.category} </div>
             <div className="text-2xl font-bold text-orange-600"> Rs.{product.price} </div>
+            
             <div className="flex space-x-5  mt-5  ">
               <button className="bg-orange-500 text-white px-3 py-2 rounded-md  disabled:bg-gray-500 " disabled={(count) <= 1} onClick={btn2} > - </button>
 
@@ -129,4 +141,4 @@ function ProductDetails({ onaddtocart }) {
     </>);
 }
 
-export default (ProductDetails);
+export default memo(ProductDetails);

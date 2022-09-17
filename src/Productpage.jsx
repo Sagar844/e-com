@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Productlist from './Productlist';
 import { getProductList } from './api';
 import Loading from './Loading';
 
 function Productpage() {
+ 
+console.log("productpage is runnig");
   const [productList, setProductList] = useState([]);
   const [Query, setQuery] = useState('');
   const [sort, setSort] = useState('');
@@ -39,18 +41,26 @@ function Productpage() {
     setQuery(event.target.value);
   }
 
-  function handlesortchange(event) {
+  
+  const handlesortchange= useCallback(
+  function (event) {
     setSort(event.target.value);
-  }
+  },
+[]);
+
+  console.log("setSort");
+  
   if (loding) {
     return <Loading />;
   }
+
+  
 
   return (
     <div>
       <div className=" flex justify-end mt-10 mr-20  ">
         <select
-          className=" rounded-sm border-2 "
+          className=" rounded-sm border-2  "
           onChange={handlesortchange}
           value={sort}
         >
