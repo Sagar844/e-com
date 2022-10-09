@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect} from 'react';
 import styled from 'styled-components';
 import RightNav from './RightNav';
 import Hamburger from 'hamburger-react';
+import { auth } from "./firebase";
 
 const StyledBurger = styled.div`
   width: 2rem;
@@ -30,13 +31,24 @@ const StyledBurger = styled.div`
 
 const Burger = () => {
   const [open, setOpen] = useState(false);
+  const [username, setUser] = useState("");
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user.displayName);
+      } else setUser("");
+    
+    });
+  }, []);
+
 
   return (
     <>
       <StyledBurger  open={open} onClick={() => setOpen(!open)}>
         <Hamburger />
       </StyledBurger>
-      <RightNav open={open} />
+      <RightNav open={open} name={username}/>
     </>
   )
 }

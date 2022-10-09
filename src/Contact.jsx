@@ -51,7 +51,7 @@ function Contact() {
 
   return (
 
-    <div className=" p-5  bg-[url('https://cdn.discordapp.com/attachments/1001168177952211054/1019485159269072916/4kmanzara.4d0fb49d.webp')] flex items-center  justify-center overflow-x-hidden">
+    <div className=" p-5  bg-[url('https://cdn.discordapp.com/attachments/1001168177952211054/1027213795967385721/cesar-couto-TIvFLeqZ4ec-unsplash.jpg')] bg-cover flex items-center  justify-center overflow-x-hidden">
       <form method="POST" className=" space-y-5 mt-10 bg-white px-40 py-20 rounded-md text-center  ">
         <div className="text-3xl font-bold  mb-5">Ask Your Queries</div>
         <label className="text-2xl text-bold">Name</label>

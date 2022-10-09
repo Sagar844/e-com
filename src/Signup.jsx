@@ -45,7 +45,7 @@ function Signup() {
 
 	return (
 		<div>
-			<div className=" p-5  bg-[url('https://cdn.discordapp.com/attachments/1001168177952211054/1019485159269072916/4kmanzara.4d0fb49d.webp')] h-screen flex items-center  justify-center ">
+			<div  className=" p-5 bg-[url('https://cdn.discordapp.com/attachments/1001168177952211054/1027213795967385721/cesar-couto-TIvFLeqZ4ec-unsplash.jpg')] bg-cover flex items-center  justify-center space-y-5">
 				<form className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  px-10 py-20 rounded-md text-center">
 					<label>Name:</label>
 					<br />

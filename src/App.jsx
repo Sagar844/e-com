@@ -10,8 +10,12 @@ import Cart from "./Cart";
 import Signup from "./Signup";
 import { auth } from "./firebase";
 import Profile from "./Profile";
+import Forgot from "./Forgot";
+import Productsingle from "./Productsingle";
+
 
 function App() {
+  // cart saved data productId and itemscount
   const saveddatastring = localStorage.getItem("my-cart") || "{}";
   const savedData = JSON.parse(saveddatastring);
 
@@ -20,14 +24,28 @@ function App() {
     let oldcount = cart[productId] || 0;
 
     const newcart = { ...cart, [productId]: oldcount + count };
-    setCart(newcart);
+  updateCart(newcart)
+  }
+
+
+function updateCart(newcart){
+
+  setCart(newcart);
     const cartstring = JSON.stringify(newcart);
     localStorage.setItem("my-cart", cartstring);
-  }
+
+
+
+}
+
+
+
+
   const totalcount = Object.keys(cart).reduce(function (output, current) {
     return output + cart[current];
   }, 0);
 
+  // userdata from firebase
   const [username, setUser] = useState("");
 
   useEffect(() => {
@@ -50,7 +68,6 @@ function App() {
   }, []);
 
   const [userlast, settime] = useState("");
-
   useEffect(() => {
     auth.onAuthStateChanged((uservishal) => {
       if (uservishal) {
@@ -69,6 +86,10 @@ function App() {
     });
   }, []);
 
+
+
+  // jsx 
+
   return (
     <div className="bg-gray-300 lg:bg-gray-300 h-screen overflow-x-scroll flex flex-col">
       <Navbar Productcount={totalcount} name={username} />
@@ -77,17 +98,25 @@ function App() {
    grow "
       >
         <Routes>
-          <Route index element={<Productpage />} />
+          <Route index element={<Productpage username={username} />} />
           <Route
             path="/products/:id"
             element={<ProductDetails onaddtocart={handleaddtocart} />}
           />
+          <Route
+            path="/product/:_id"
+            element={<Productsingle onaddtocart={handleaddtocart} />}
+          />
           <Route path="/Loginpage" element={<Loginpage />} />
           <Route path="/Contact" element={<Contact />} />
-          <Route path="/Cart" element={<Cart />} />
+          <Route path="/Cart" element={<Cart cart={cart}   updateCart={updateCart} />} />
 
           <Route path="/Signup" element={<Signup />} />
-          <Route path="/Loginpage" element={<Loginpage />} />
+          <Route
+            path="/Loginpage"
+            element={<Loginpage username={username} setUser={setUser} />}
+          />
+          <Route path="/Forgot" element={<Forgot />}></Route>
 
           <Route
             path="/Profile"
@@ -103,6 +132,7 @@ function App() {
         </Routes>
 
         <Footer />
+ 
       </div>
     </div>
   );

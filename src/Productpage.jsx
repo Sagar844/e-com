@@ -3,7 +3,9 @@ import Productlist from './Productlist';
 import { getProductList } from './api';
 import Loading from './Loading';
 
-function Productpage() {
+
+function Productpage({username}) {
+
  
 console.log("productpage is runnig");
   const [productList, setProductList] = useState([]);
@@ -27,6 +29,7 @@ console.log("productpage is runnig");
     return lowerCaseTitle.indexOf(lowerCaseQuery) != -1;
   });
 
+
   if (sort == 'price') {
     data.sort(function(x, y) {
       return y.price - x.price;
@@ -36,6 +39,7 @@ console.log("productpage is runnig");
       return x.title < y.title ? -1 : 1;
     });
   }
+
 
   function handlechange(event) {
     setQuery(event.target.value);
@@ -54,7 +58,7 @@ console.log("productpage is runnig");
     return <Loading />;
   }
 
-  
+    
 
   return (
     <div>

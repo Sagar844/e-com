@@ -7,6 +7,7 @@ import DataNotFound from "./DataNotFound"
 import { getProductList } from "./api";
 import Productlist from "./Productlist";
 import { memo } from "react";
+import Fakeproductpage from "./Fakeproductpage";
 
 
 function ProductDetails({ onaddtocart }) {
@@ -37,25 +38,7 @@ function ProductDetails({ onaddtocart }) {
 
 
 
-  useEffect(function() {
-    const xyz = getProductList();
 
-    xyz.then(function(products) {
-
-      setProductList(products)
-      setLoading(false);
-
-    });
-
-
-  }, []);
-
-  let data = productList;
-
-//   useEffect(() =>{
-
-// console.log("ProductDetails run")
-//   },[])
 
   const btn = () => {
 
@@ -134,8 +117,8 @@ setCounter(1)
       </div >
       <div className="text-3xl text-bold ml-10">You might be interested in</div>
       <div className="mt-5">
-        <Productlist Products={data} />
-
+     
+      < Fakeproductpage />
       </div>
 
     </>);

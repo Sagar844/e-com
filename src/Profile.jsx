@@ -2,10 +2,13 @@ import React from "react";
 
 import { Logout } from "./Logout";
 
+
+
 function Profile(props) {
   console.log(props);
   return (
-    <div className="bg-gray-300  px-10 py-40 flex justify-center">
+
+    <div  className=" p-5 bg-[url('https://cdn.discordapp.com/attachments/1001168177952211054/1027213795967385721/cesar-couto-TIvFLeqZ4ec-unsplash.jpg')] bg-cover flex items-center  justify-center space-y-5">
       <div className="font-bold  text-3xl bg-white rounded-md px-20 py-40 ml-10 mr-10">
         <div className="">
           <div className="flex justify-end mt-5 text-white">
@@ -17,7 +20,11 @@ function Profile(props) {
         <div className="mt-5">LastSignInTime-{props.last}</div>
       </div>
 
-      <div></div>
+      <div>
+
+
+    
+      </div>
     </div>
   );
 }

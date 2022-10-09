@@ -26,6 +26,7 @@ function Footer() {
 
       </div>
       <div className="space-y-5 mt-16  ">
+        
 
         <h1>Latest news</h1>
         <h1 className=" mr-32">Get in Touch with Us for the Best Quality Custom Prints & Supplies..</h1>
