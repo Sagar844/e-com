@@ -12,7 +12,11 @@ export function getProductData(id) {
 }
 export function getProductList() {
 
+<<<<<<< HEAD
   return axios.get('https://dummyjson.com/products?limit=50').then(function(response) {
+=======
+  return axios.get('https://dummyjson.com/products/?limit=100').then(function(response) {
+>>>>>>> 2488b7bfbc34bc8867e22ec0435476b5ed80fb95
 
     return response.data.products;
   });
