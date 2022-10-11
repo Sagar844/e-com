@@ -4,7 +4,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import Imged from "./Imged";
+
 
 function Forgot() {
   function callapi() {
@@ -45,7 +45,7 @@ function Forgot() {
         <br></br>
         
         <br></br>
-        <Imged />
+    
         <input
           id="ema"
           placeholder="Enter your email"

@@ -28,12 +28,10 @@ export const Logout = () => {
 
   return (
     <div>
-      <button
-        className="bg-green-500 px-2 py-2 rounded-md text-xl  hover:bg-red-500"
-        onClick={handlelogout}
-      >
-        Logout
-      </button>
+      <button>
+   <img  onClick={handlelogout} src="https://cdn.discordapp.com/attachments/1001168177952211054/1029091825098707014/icons8-logout-48.png" alt="" />
+     </button> 
+   
     </div>
   );
 };

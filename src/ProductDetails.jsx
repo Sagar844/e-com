@@ -8,7 +8,8 @@ import { getProductList } from "./api";
 import Productlist from "./Productlist";
 import { memo } from "react";
 import Fakeproductpage from "./Fakeproductpage";
-
+import {RiArrowGoBackFill} from "react-icons/ri"
+ 
 
 function ProductDetails({ onaddtocart }) {
 
@@ -78,7 +79,7 @@ setCounter(1)
 
   return (
     <>
-      <div className="bg-white rounded-lg mt-20 mx-9 px-5 py-20 flex gap-5   ">
+      <div className="bg-white rounded-lg mt-10 mx-9 px-3 py-10 flex gap-5   ">
         <div className="  flex  space-x-10 ">
           <TransformWrapper>
             <TransformComponent>
@@ -92,6 +93,7 @@ setCounter(1)
             <div className="text-bold text-red-500 text-3xl ">{product.title} </div>
             <div className="text-xl font-bold">{product.category} </div>
             <div className="text-2xl font-bold text-orange-600"> Rs.{product.price} </div>
+            <div className="text-2xl font-bold text-orange-600"> <span className="text-black">Brand:</span>{product.brand} </div>
             
             <div className="flex space-x-5  mt-5  ">
               <button className="bg-orange-500 text-white px-3 py-2 rounded-md  disabled:bg-gray-500 " disabled={(count) <= 1} onClick={btn2} > - </button>
@@ -110,12 +112,12 @@ setCounter(1)
           </div>
           <div className="mr-20">
 
-            <Link className="bg-indigo-500 p-2 rounded-md hover:bg-orange-500 " to="/">  Back </Link>
+            <Link className="text-xl text-bold" to="/"> <RiArrowGoBackFill/> </Link>
           </div>
         </div>
 
       </div >
-      <div className="text-3xl text-bold ml-10">You might be interested in</div>
+      <div className="text-3xl font-bold ml-10 ">You might be interested in</div>
       <div className="mt-5">
      
       < Fakeproductpage />

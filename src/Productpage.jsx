@@ -21,6 +21,15 @@ console.log("productpage is runnig");
       setLoading(false);
     });
   }, []);
+  
+  useEffect(function() {
+    const xyz = getProductList();
+
+    xyz.then(function(products) {
+      setProductList(products);
+      setLoading(false);
+    });
+  }, []);
 
   let data = productList.filter(function(item) {
     const lowerCaseTitle = item.title.toLowerCase();
@@ -62,7 +71,7 @@ console.log("productpage is runnig");
 
   return (
     <div>
-      <div className=" flex justify-end mt-10 mr-20  ">
+      <div className=" flex justify-end mr-20  ">
         <select
           className=" rounded-sm border-2  "
           onChange={handlesortchange}
@@ -75,7 +84,7 @@ console.log("productpage is runnig");
         </select>
       </div>
 
-      <div className=" flex justify-center mt-5 sm:flex px-10 py-2    ">
+      <div className=" flex justify-center  sm:flex     ">
         <input
           value={Query}
           type="text"

@@ -23,7 +23,7 @@ function Productsingle({ onaddtocart }) {
       setProduct(product);
       setLoading(false);
     }).catch(function () {
-      setLoading(false);
+  
     });
   }, []);
 

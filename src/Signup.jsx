@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword, updateProfile, } from 'firebase/auth';
 import { auth } from './firebase';
 
 
+
 function Signup() {
 	const navigate = useNavigate();
 	const [values, SetValues] = useState({
@@ -45,9 +46,12 @@ function Signup() {
 
 	return (
 		<div>
-			<div  className=" p-5 bg-[url('https://cdn.discordapp.com/attachments/1001168177952211054/1027213795967385721/cesar-couto-TIvFLeqZ4ec-unsplash.jpg')] bg-cover flex items-center  justify-center space-y-5">
-				<form className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  px-10 py-20 rounded-md text-center">
-					<label>Name:</label>
+			<div  className=" p-5 bg-gray-100">
+				
+				<form className="rounded-md text-center space-y-5 mt-10">
+				
+			<div className='text-black font-bold text-xl '>BECOME A PRINT MEMBER</div>
+					
 					<br />
 					<input
 						placeholder="Enter your name"
@@ -56,10 +60,9 @@ function Signup() {
 						onChange={event =>
 							SetValues(prev => ({ ...prev, name: event.target.value }))
 						}
-						className="border-2 solid border-orange-500 rounded-md px-16 py-3"
+						className="border  bg-transparent rounded-sm font-bold px-10 py-1"
 					/>
-					<br /> <br />
-					<label>Email:</label>
+
 					<br />
 					<input
 						placeholder="Enter your email"
@@ -67,10 +70,10 @@ function Signup() {
 						onChange={event =>
 							SetValues(prev => ({ ...prev, email: event.target.value }))
 						}
-						className="border-2 solid border-orange-500 rounded-md px-16 py-3"
+						className="border  bg-transparent rounded-sm font-bold px-10 py-1"
 					/>
-					<br /> <br />
-					<label>Password:</label>
+				
+			
 					<br />
 					<input
 						placeholder="Password"
@@ -80,29 +83,32 @@ function Signup() {
 						onChange={event =>
 							SetValues(prev => ({ ...prev, password: event.target.value }))
 						}
-						className="border-2 solid border-orange-500 rounded-md px-16 py-3"
+						className="border  bg-transparent rounded-sm font-bold px-10 py-1"
 					/>
-					<br /> <br />
+				
 					<div className="text-red-500 animate-bounce text-2xl mb-5">
 						{errmes}
 					</div>
 					<button
-						className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 text-white py-3 px-5 rounded-md disabled:bg-gray-500"
+						className="bg-black px-28 py-1 text-white font-bold rounded-sm disabled:bg-gray-500"
 						disabled={subtndisable}
 						onClick={handlesubmit}
 						type="submit"
 					>
 						{' '}
-						Signup
+						Join Us
 					</button>
+					<div>
+					<span>Already a Member?</span>
+					
 					<Link
-						className="bg-blue-600 text-white text-bold px-5 py-3 ml-2 rounded-md "
+						className=""
 						to="/Loginpage"
 					>
-						{' '}
+						
 						Login
 					</Link>
-
+</div>
 
 
 

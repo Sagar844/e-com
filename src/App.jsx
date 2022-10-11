@@ -14,6 +14,8 @@ import Forgot from "./Forgot";
 import Productsingle from "./Productsingle";
 
 
+
+
 function App() {
   // cart saved data productId and itemscount
   const saveddatastring = localStorage.getItem("my-cart") || "{}";
@@ -125,16 +127,17 @@ function updateCart(newcart){
                 name={username}
                 email={useremail}
                 last={userlast}
-                photo={userimg}
+        
               />
             }
           />
         </Routes>
 
         <Footer />
- 
+
       </div>
     </div>
+
   );
 }
 export default App;
