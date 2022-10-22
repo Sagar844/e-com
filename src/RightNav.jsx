@@ -6,7 +6,7 @@ import { CgProfile } from 'react-icons/cg';
 import { IoIosLogIn } from 'react-icons/io';
 import { SiGnuprivacyguard } from 'react-icons/si';
 
-import {Logout }from "./Logout";
+
 
 
 const Ul = styled.ul`
@@ -35,7 +35,7 @@ const Ul = styled.ul`
 `;
 
 const RightNav = ( open ) => {
-  // console.log(open);
+
   return (
     <Ul className="space-y-5 text-white text-xl font-bold flex justify-center  " open={open.open}>
        <div className="font-bold text-gray-500 text-xl">
@@ -44,10 +44,9 @@ const RightNav = ( open ) => {
       <div className="ml-10 ">
         <Link to="/"><SiHomebridge />  HOME</Link>
         <Link to="/Signup"><SiGnuprivacyguard /> SIGNIN</Link>
-        <Link to="/Loginpage"><IoIosLogIn /> LOGIN</Link>
-       
+        <Link to="/Login"><IoIosLogIn /> LOGIN</Link>
         <Link to="/Profile"><CgProfile /> PROFILE</Link>
-      <Logout></Logout>
+   
       </div>
 
     </Ul>

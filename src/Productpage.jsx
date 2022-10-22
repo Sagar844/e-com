@@ -1,101 +1,116 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import Productlist from './Productlist';
-import { getProductList } from './api';
-import Loading from './Loading';
+import React, { useState, useEffect, useCallback } from "react";
+import Productlist from "./Productlist";
+import { getProductList } from "./api";
+import Loading from "./Loading";
+import NoproductsMacth from "./NoproductsMacth";
+import { range, toQuery } from "lodash";
+import { Link, Navigate, useSearchParams } from "react-router-dom";
+import { withUser } from "./withProvider";
 
+function Productpage({user}) {
 
-function Productpage({username}) {
+if(!user){
+return <Navigate to="/Login"/>
+}
 
- 
-console.log("productpage is runnig");
-  const [productList, setProductList] = useState([]);
-  const [Query, setQuery] = useState('');
-  const [sort, setSort] = useState('');
   const [loding, setLoading] = useState(true);
+  const [productdata, setProductData] = useState();
 
-  useEffect(function() {
-    const xyz = getProductList();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const params = Object.fromEntries([...searchParams]);
+  let { query, sort, page } = params;
 
-    xyz.then(function(products) {
-      setProductList(products);
-      setLoading(false);
-    });
-  }, []);
-  
-  useEffect(function() {
-    const xyz = getProductList();
+  query = query || "";
+  sort = sort || "default";
+  page = +page || 1;
 
-    xyz.then(function(products) {
-      setProductList(products);
-      setLoading(false);
-    });
-  }, []);
+  useEffect(
+    function () {
+      let sortBy;
+      let sortType;
 
-  let data = productList.filter(function(item) {
-    const lowerCaseTitle = item.title.toLowerCase();
+      if (sort == "title") {
+        sortBy = "title";
+      } else if (sort == "lowtohigh") {
+        sortBy = "price";
+      } else if (sort == "hightolow") {
+        sortBy = "price";
+        sortType = "desc";
+      }
 
-    const lowerCaseQuery = Query.toLowerCase();
-    return lowerCaseTitle.indexOf(lowerCaseQuery) != -1;
-  });
+      getProductList(sortBy, query, page, sortType).then(function (xyz) {
+        setProductData(xyz);
 
-
-  if (sort == 'price') {
-    data.sort(function(x, y) {
-      return y.price - x.price;
-    });
-  } else if (sort == 'name') {
-    data.sort(function(x, y) {
-      return x.title < y.title ? -1 : 1;
-    });
-  }
-
+        setLoading(false);
+      });
+    },
+    [sort, query, page]
+  );
 
   function handlechange(event) {
-    setQuery(event.target.value);
+    setSearchParams(
+      { ...params, query: event.target.value },
+      { replace: false }
+    );
   }
 
-  
-  const handlesortchange= useCallback(
-  function (event) {
-    setSort(event.target.value);
-  },
-[]);
+  const handlesortchange = useCallback(function (event) {
+    setSearchParams(
+      { ...params, sort: event.target.value },
+      { replace: false }
+    );
+  }, []);
 
   console.log("setSort");
-  
+
   if (loding) {
     return <Loading />;
   }
-
-    
 
   return (
     <div>
       <div className=" flex justify-end mr-20  ">
         <select
-          className=" rounded-sm border-2  "
+          className=" rounded-sm border-2"
           onChange={handlesortchange}
           value={sort}
         >
           <option value="default"> Default Sorting </option>
-          <option value="price"> Short by price : high to low</option>
-          <option value="name"> Short by name</option>
-          <option value="high"> Short by price : low to high</option>
+          <option value="title">Short by name </option>
+          <option value="lowtohigh"> Short by price : low to high</option>
+          <option value="hightolow">Short by price : high to low </option>
         </select>
       </div>
 
-      <div className=" flex justify-center  sm:flex     ">
+      <div className=" flex justify-center sm:flex px-5 ">
         <input
-          value={Query}
+          value={query}
           type="text"
           onChange={handlechange}
           className="border  border-blue-500 w-96 rounded-md px-20 py-2 "
           placeholder="Search for Products ,brands  "
         />
       </div>
-      <Productlist Products={data} />
+
+      {productdata.data.length > 0 && (
+        <Productlist Products={productdata.data} />
+      )}
+
+      {productdata.data.length == 0 && <NoproductsMacth />}
+      {range(1, productdata.meta.last_page + 1).map((pageno) => (
+        <Link
+          key={pageno}
+          to={"?" + new URLSearchParams({ ...params, page: pageno })}
+          className={
+            " p-2 rounded-sm mr-2 text-white" +
+            (pageno === page ? " bg-indigo-400" : " bg-gray-500")
+          }
+        >
+          {pageno}
+        </Link>
+      ))}
     </div>
   );
 }
 
-export default Productpage;
+export default withUser(Productpage);

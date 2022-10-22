@@ -36,12 +36,12 @@ function Forgot() {
   });
 
   return (
-    <div className=" bg-[url('https://cdn.discordapp.com/attachments/1001168177952211054/1027213795967385721/cesar-couto-TIvFLeqZ4ec-unsplash.jpg')] bg-cover  h-screen flex items-center  justify-center">
+    <div className=" bg-gray-100 bg-cover  h-screen flex items-center  justify-center">
       <form
         onSubmit={handleSubmit}
-        className="bg-white px-20 py-5 rounded-md space-y-2 mb-10 mt-20 text-center"
+        className="bg-white px-20 py-5 rounded-md shadow-md space-y-2 mb-10 mt-20 text-center"
       >
-        <label className="text-4xl font-bold  "> Forget</label>
+        <label className="text-4xl font-bold  "> Forgot</label>
         <br></br>
         
         <br></br>

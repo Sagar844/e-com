@@ -1,37 +1,29 @@
-import React, { useState } from "react";
+import React from 'react'
+import Button2 from './Button2';
+import { withUser } from './withProvider'
+import { Navigate } from 'react-router-dom';
 
-import { logout } from "./firebase";
-import { useNavigate } from "react-router-dom";
-import Loading from "./Loading";
 
-export const Logout = () => {
-  const[loading, setLoading] = useState(false);
-  const navigate = useNavigate();
-  
-  async function handlelogout() {
-    if (loading) {
-      return <Loading />;
-    }
-  
+const Logout = ({setUser}) => {
 
-    await logout({});
-    setLoading(true);
-   
-
-    navigate("/Loginpage");
-  }
- 
+if(!setUser){
+    return <Navigate to="/Login"/>
+}
     
- 
+    function handlelogout(){
 
-  
+        localStorage.removeItem("token");
+
+          setUser(undefined)
+
+    }
 
   return (
     <div>
-      <button>
-   <img  onClick={handlelogout} src="https://cdn.discordapp.com/attachments/1001168177952211054/1029091825098707014/icons8-logout-48.png" alt="" />
-     </button> 
-   
+
+<Button2 onClick={handlelogout}>Logout</Button2>
     </div>
-  );
-};
+  )
+}
+
+export default   withUser(Logout)

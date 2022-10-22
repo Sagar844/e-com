@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import Sidemenu from "./Sidemenu";
 import { FiUsers } from "react-icons/fi";
 import { BsCartCheck } from "react-icons/bs";
+import { withCart } from "./withProvider";
 
 
-function Navbar(props) {
+function Navbar({ cartCount}) {
   return (
     <div className="bg-white py-3 flex items-center shadow-sm  ">
       <div className="">
@@ -19,26 +20,24 @@ function Navbar(props) {
        
       </div>
 
-      
-
 
       <div className="  space-x-10 ml-auto hidden sm:flex   ">
         <Link className=" text-xl space-x-2  " to="/Profile">
           <div className="flex text-center">
-            <FiUsers className="mt-2 text-green-500 font-bold" />
+            <FiUsers className="mt-2 text-green-500 font-bold text-2xl" />
             <div className="font-bold text-gray-500 text-xl">
-              {props.name ? ` ${props.name}` : ""}
+       
             </div>
           </div>
         </Link>
       </div>
      
       <div className=" flex  ml-40  ">
-        <Link to="Cart">
-          <BsCartCheck className="text-green-500 text-3xl hover:text-orange-500" />
+        <Link to="CartPage">
+          <BsCartCheck className="text-green-500 text-3xl hover:text-orange-500 w-6" />
         </Link>
-        <span className="bg-red-500 text-white rounded-full px-2 mr-5 py-1">
-          {props.Productcount}
+        <span className="bg-red-500 text-white rounded-lg px-3 font-bold mr-5  py-1">
+        { cartCount }
         </span>
       </div>
 
@@ -46,7 +45,7 @@ function Navbar(props) {
 
       <Link
         className="  mr-5 px-3 py-2 ml-2 rounded-md hover:bg-gray-200  hidden  sm:flex"
-        to="Loginpage"
+        to="Login"
       >
         {" "}
         Login
@@ -60,4 +59,4 @@ function Navbar(props) {
   );
 }
 
-export default Navbar;
+export default withCart (Navbar);
