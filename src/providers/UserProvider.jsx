@@ -1,13 +1,11 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { UserContext } from "../Contexts";
-import Loading from "../Loading";
-
+import UserLoading from "../UserLoading";
 
 function UserProvider({ children }) {
   const [user, setUser] = useState();
   const [loading, setloading] = useState(true);
-
 
   const token = localStorage.getItem("token");
 
@@ -21,23 +19,20 @@ function UserProvider({ children }) {
         })
         .then((response) => {
           setUser(response.data);
-          setloading(false)
-       
+          setloading(false);
         })
         .catch(() => {
           localStorage.removeItem("token");
-          setloading(false)
+          setloading(false);
         });
     } else {
-      setloading(false)
+      setloading(false);
     }
   }, []);
-   
-  if(loading){
-return <Loading></Loading>
 
+  if (loading) {
+    return <UserLoading></UserLoading>;
   }
-
 
   return (
     <UserContext.Provider value={{ isLoggedIn: !!token, user, setUser }}>
@@ -47,7 +42,3 @@ return <Loading></Loading>
 }
 
 export default UserProvider;
-
-
-
-

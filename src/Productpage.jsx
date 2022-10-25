@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Productlist from "./Productlist";
 import { getProductList } from "./api";
-import Loading from "./Loading";
+
 import NoproductsMacth from "./NoproductsMacth";
-import { range, toQuery } from "lodash";
+import { range, } from "lodash";
 import { Link, Navigate, useSearchParams } from "react-router-dom";
 import { withUser } from "./withProvider";
+import UserLoading from "./UserLoading";
 
 function Productpage({user}) {
 
@@ -40,7 +41,6 @@ return <Navigate to="/Login"/>
 
       getProductList(sortBy, query, page, sortType).then(function (xyz) {
         setProductData(xyz);
-
         setLoading(false);
       });
     },
@@ -64,12 +64,12 @@ return <Navigate to="/Login"/>
   console.log("setSort");
 
   if (loding) {
-    return <Loading />;
+    return <UserLoading />;
   }
 
   return (
     <div>
-      <div className=" flex justify-end mr-20  ">
+      <div className=" flex justify-end mr-20   ">
         <select
           className=" rounded-sm border-2"
           onChange={handlesortchange}

@@ -21,7 +21,7 @@ function callLoginApi(values, bag) {
       bag.props.setUser(user);
       bag.props.setAlert({
         type: "success",
-        message: " Successfully logged in",
+        message: " Successfully logged in"  ,
       });
     })
     .catch(() => {
@@ -29,7 +29,7 @@ function callLoginApi(values, bag) {
         type: "error",
         message: "Invalid Credentials " + values.myPassword + values.email,
       });
-    });
+    })
 }
 
 const schema = Yup.object().shape({

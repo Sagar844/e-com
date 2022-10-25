@@ -18,7 +18,7 @@ function Input({ name, label, id, className, touched, error, ...rest }) {
         id={id}
         name={name}
         className={
-          "relative block w-full appearance-none rounded-md border  px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-1 focus:outline-none focus:ring-indigo-500 sm:text-sm " +
+          "relative block w-full appearance-none rounded-md border hover:blur-sm  px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-1 focus:outline-none focus:ring-indigo-500 sm:text-sm " +
           borderClass +
           className
         }

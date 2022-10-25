@@ -2,7 +2,7 @@ import React, { useState, useEffect} from "react";
 import { Link, useParams } from "react-router-dom";
 import { getProductData } from "./api";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import Loading from "./Loading";
+import UserLoading from "./UserLoading";
 import DataNotFound from "./DataNotFound";
 import Fakeproductpage from "./Fakeproductpage";
 import { RiArrowGoBackFill } from "react-icons/ri";
@@ -37,13 +37,13 @@ function ProductDetails({ addToCart,setAlert}) {
     addToCart(id, count);
     setAlert({
       type: "success",
-      message: "items added Successfully ",
+      message:"items added successfully" + product.title ,
     
     })
   
   }
   if (loading) {
-    return <Loading></Loading>;
+    return <UserLoading/>;
   }
 
   if (!product) {

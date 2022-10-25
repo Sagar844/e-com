@@ -12,7 +12,7 @@ function Navbar({ cartCount}) {
       <div className="">
         <Link to="/">
           <img
-            className="ml-5  w-30"
+            className="ml-5 hover:blur-sm  w-30"
             src="https://trycasuals.com/wp-content/uploads/2019/06/print-1-1.svg"
           />
         </Link>

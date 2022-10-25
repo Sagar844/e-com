@@ -1,8 +1,9 @@
 import React from "react";
 import { TiDeleteOutline} from "react-icons/ti";
-import  {Link} from "react-router-dom"
+import  {Link} from "react-router-dom";
+import {withAlert} from "./withProvider";
 
-function CartRow({ product, quantity, onQuantityChange, onRemove }) {
+function CartRow({ product, quantity, onQuantityChange, onRemove,setAlert }) {
 
   function handleChange(event) {
     onQuantityChange(product.id, +event.target.value);
@@ -10,6 +11,11 @@ function CartRow({ product, quantity, onQuantityChange, onRemove }) {
 
   function handleCrossClick() {
     onRemove(product.id);
+    setAlert({
+type: "success",
+message: "Item Remove Successfully " + product.title,
+
+    })
   }
 
   function handleMouseEnter() {
@@ -43,4 +49,4 @@ function CartRow({ product, quantity, onQuantityChange, onRemove }) {
   );
 }
 
-export default CartRow;
+export default withAlert(CartRow);

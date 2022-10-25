@@ -43,6 +43,7 @@ function CartList({ cart, updateCart }) {
         <span className="w-20">Price</span>
         <span className="w-32">Quantity</span>
         <span className="w-20">Subtotal</span>
+        <span className="w-20">total</span>
       </div>
       {cart.map((cartItem) => (
         <CartRow

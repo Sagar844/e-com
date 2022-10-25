@@ -20,20 +20,27 @@ import Alert from "./Alert";
 
 
 
+
+
+
+
+
+
 function App() {
   // jsx
 
   return (
-    <div className="bg-gray-300 lg:bg-gray-300 h-screen overflow-x-scroll flex flex-col space-y-5">
+    <div className="bg-gray-300  lg:bg-gray-300 h-screen overflow-x-scroll flex flex-col space-y-5">
       <UserProvider>
         <CartProvider>
           <AlertProvider>
             <Navbar />
-            <Alert></Alert>
+            <Alert/>
             <Routes>
               <Route index element={<Productpage />} />
               <Route path="/products/:id" element={<ProductDetails />} />
               <Route path="/product/:_id" element={<Productsingle />} />
+             
               <Route
                 path="Login"
                 element={
@@ -47,7 +54,7 @@ function App() {
               <Route path="/Signup" element={<Signup />} />
               <Route path="/Forgot" element={<Forgot />}></Route>
               <Route path="/Profile" element={<Profile />} />
-            </Routes>
+            </Routes> 
             <Footer />
           </AlertProvider>
         </CartProvider>

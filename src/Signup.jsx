@@ -20,7 +20,7 @@ function callLoginApi(values,bag) {
       bag.props.setUser(user);
       bag.props.setAlert({
           type: "success",
-          message:"Account created."
+          message:"Account created. Please login  " + user.email,
 
       })
   
