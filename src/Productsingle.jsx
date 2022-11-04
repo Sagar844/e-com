@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getProductid } from "./api";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import Loading from "./Loading";
+import UserLoading from "./UserLoading";
 import DataNotFound from "./DataNotFound";
 
 import { memo } from "react";
@@ -42,7 +42,7 @@ function Productsingle({ onaddtocart }) {
   );
 
   if (loading) {
-    return <Loading></Loading>;
+    return <UserLoading/>
   }
 
   if (!product) {

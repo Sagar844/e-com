@@ -20,13 +20,13 @@ function callLoginApi(values,bag) {
 
     .then(() => {
       bag.props.setAlert({
-        type: "success",
+        type: "Success",
         message: " Message  Successfully send  ",
       });
     })
     .catch(() => {
       bag.props.setAlert({
-        type: "error",
+        type: "Error",
         message: " Message  not send  ",
       });
       

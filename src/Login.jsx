@@ -20,13 +20,13 @@ function callLoginApi(values, bag) {
       localStorage.setItem("token", token);
       bag.props.setUser(user);
       bag.props.setAlert({
-        type: "success",
+        type: "Success",
         message: " Successfully logged in"  ,
       });
     })
     .catch(() => {
       bag.props.setAlert({
-        type: "error",
+        type: "Error",
         message: "Invalid Credentials " + values.myPassword + values.email,
       });
     })
@@ -98,8 +98,8 @@ export function Login({
           Login
         </Button>
         <span className="mt-3"> Not a Member?</span>
-        <Link to="/Signup">Signup</Link>
-        <Link to="/Forgot">Forgot</Link>
+        <Link  className=" hover:border-blue-400 border-2 rounded-md py-3 px-0 text-center mb-2 " to="/Signup">Signup</Link>
+        <Link className=" hover:border-blue-400 border-2 rounded-md py-3 px-0 text-center   " to="/Forgot">Forgot</Link>
       </form>
     </div>
   );

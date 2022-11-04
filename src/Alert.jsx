@@ -5,13 +5,13 @@ import  Gif from "./Gif"
 import Error from "./Error";
 
 const thememap = {
-  success: {
+  Success: {
     Svg : Gif,
     bg: "bg-green-600",
   },
-  error: {
+  Error: {
     Svg: Error,
-    bg: "bg-red-600",
+    bg: "bg-red-800",
   },
 };
 
@@ -42,10 +42,10 @@ if (!alert) {
       <div
         role="alert"
         id="alert"
-        className={"px-8 py-2   shadow-md rounded-md   items-center  " + bg}
+        className={"px-2   shadow-md rounded-md   items-center  " + bg}
       >
         <div className="flex flex-col items-center md:flex-row">
-          <div className="mr-3 p-4  rounded md:rounded-tr-none md:rounded-br-none text-white">
+          <div className="mr-3 p-2  rounded md:rounded-tr-none md:rounded-br-none text-white">
           
          <Svg/>
           </div>

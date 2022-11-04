@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import CartList from "./CartList";
 import { getProductData } from "./api";
 import { withCart } from "./withProvider";
-
+import DataNotFound from './DataNotFound'
 const CartListpage = () => {
 
 
@@ -19,6 +19,10 @@ const CartListpage = () => {
       console.log("product is", products);
     });
   }, []);
+  if (!productsId) {
+    return <DataNotFound></DataNotFound>;
+  }
+
 
   return (
     <div>

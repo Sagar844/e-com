@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { getProductData } from "./api";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import UserLoading from "./UserLoading";
@@ -36,7 +36,7 @@ function ProductDetails({ addToCart,setAlert}) {
   function handlebuttonclick() {
     addToCart(id, count);
     setAlert({
-      type: "success",
+      type: "Success",
       message:"items added successfully" + product.title ,
     
     })

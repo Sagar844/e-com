@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 import { getCart, getProductsByIds, saveCart } from "../api";
 import { CartContext } from "../Contexts";
 import { withUser } from "../withProvider";
 
 function CartProvider({ isLoggedIn, children }) {
+
+
   const [cart, setCart] = useState([]);
 
   useEffect(
@@ -61,7 +64,7 @@ function CartProvider({ isLoggedIn, children }) {
     return previous + current.quantity;
   }, 0);
 
-  console.log(cartCount);
+
 
   return (
     <CartContext.Provider value={{ cart, cartCount, updateCart, addToCart }}>

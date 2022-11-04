@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { getProductStoreapi } from "../api";
+import UserLoading from "../UserLoading";
 import FakeList from "./FakeList";
-// import Loading from "./Loading";
 
 function Fakeproductapi() {
-  const [productxyz, setProductxyz] = useState([]);
   const [loding, setLoading] = useState(true);
+  const [productxyz, setProductxyz] = useState([]);
 
   useEffect(function () {
     const xyz = getProductStoreapi();
-
     xyz.then(function (product) {
       setProductxyz(product);
-      // setLoading(false);
+      setLoading(false);
     });
   }, []);
 
+    if (loding) {
+    return <UserLoading />;
+  }
   let data = productxyz;
-console.log(data)
-  // if (loding) {
-  //   return <Loading />;
-  // }
+  console.log(data);
+
 
   return (
     <div>

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import CartRow from "./CartRow";
-import { withCart } from "./withProvider";
+import { withAlert, withCart } from "./withProvider";
 
-function CartList({ cart, updateCart }) {
+
+function CartList({ cart, updateCart ,setAlert,cartCount}) {
 
   
   const [quantityMap, setQuantityMap] = useState();
@@ -24,10 +25,16 @@ function CartList({ cart, updateCart }) {
   function handleQuanityChange(productId, newValue) {
     const newQuantityMap = { ...quantityMap, [productId]: newValue };
     setQuantityMap(newQuantityMap);
+    console.log(newQuantityMap)
   }
 
   function handeUpdateCartClick() {
     updateCart(quantityMap);
+    setAlert({
+      type: "Success",
+      message: "  Quantity Update Successfully "  ,
+     
+    })
   }
 
   function handleRemove(productId) {
@@ -35,6 +42,8 @@ function CartList({ cart, updateCart }) {
     delete newQuantityMap[productId];
     updateCart(newQuantityMap);
   }
+  
+  
 
   return (
     <div>
@@ -49,7 +58,7 @@ function CartList({ cart, updateCart }) {
         <CartRow
           key={cartItem.product.id}
           product={cartItem.product}
-          quantity={quantityMap[cartItem.product.id] || cartItem.quantity}
+          quantity={ cartItem.quantity}
           onQuantityChange={handleQuanityChange}
           onRemove={handleRemove}
         />
@@ -61,4 +70,4 @@ function CartList({ cart, updateCart }) {
   );
 }
 
-export default withCart(CartList);
+export default withCart(withAlert(CartList));

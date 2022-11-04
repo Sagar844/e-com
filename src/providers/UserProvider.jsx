@@ -4,9 +4,9 @@ import { UserContext } from "../Contexts";
 import UserLoading from "../UserLoading";
 
 function UserProvider({ children }) {
+  
   const [user, setUser] = useState();
   const [loading, setloading] = useState(true);
-
   const token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -20,6 +20,7 @@ function UserProvider({ children }) {
         .then((response) => {
           setUser(response.data);
           setloading(false);
+          console.log(response)
         })
         .catch(() => {
           localStorage.removeItem("token");

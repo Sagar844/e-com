@@ -22,15 +22,12 @@ import Alert from "./Alert";
 
 
 
-
-
-
-
 function App() {
-  // jsx
+
+
 
   return (
-    <div className="bg-gray-300  lg:bg-gray-300 h-screen overflow-x-scroll flex flex-col space-y-5">
+    <div className="bg-gray-200  lg:bg-gray-200 h-screen  flex flex-col space-y-5">
       <UserProvider>
         <CartProvider>
           <AlertProvider>

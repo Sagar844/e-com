@@ -12,7 +12,7 @@ function CartRow({ product, quantity, onQuantityChange, onRemove,setAlert }) {
   function handleCrossClick() {
     onRemove(product.id);
     setAlert({
-type: "success",
+type: "Success",
 message: "Item Remove Successfully " + product.title,
 
     })

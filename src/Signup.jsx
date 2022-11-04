@@ -19,7 +19,7 @@ function callLoginApi(values,bag) {
       localStorage.setItem("token", token);
       bag.props.setUser(user);
       bag.props.setAlert({
-          type: "success",
+          type: "Success",
           message:"Account created. Please login  " + user.email,
 
       })
@@ -27,7 +27,7 @@ function callLoginApi(values,bag) {
     })
     .catch(() => {
       bag.props.setAlert({
-        type: "error",
+        type: "Error",
         message:"Signup Filed"
 
     })

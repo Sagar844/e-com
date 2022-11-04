@@ -3,16 +3,15 @@ import Productlist from "./Productlist";
 import { getProductList } from "./api";
 
 import NoproductsMacth from "./NoproductsMacth";
-import { range, } from "lodash";
+import { range } from "lodash";
 import { Link, Navigate, useSearchParams } from "react-router-dom";
 import { withUser } from "./withProvider";
 import UserLoading from "./UserLoading";
 
-function Productpage({user}) {
-
-if(!user){
-return <Navigate to="/Login"/>
-}
+function Productpage({ user }) {
+  if (!user) {
+    return <Navigate to="/Login" />;
+  }
 
   const [loding, setLoading] = useState(true);
   const [productdata, setProductData] = useState();
@@ -87,7 +86,7 @@ return <Navigate to="/Login"/>
           value={query}
           type="text"
           onChange={handlechange}
-          className="border  border-blue-500 w-96 rounded-md px-20 py-2 "
+          className="border text-start  border-blue-500 w-96 rounded-md px-20 py-2 "
           placeholder="Search for Products ,brands  "
         />
       </div>
@@ -102,7 +101,7 @@ return <Navigate to="/Login"/>
           key={pageno}
           to={"?" + new URLSearchParams({ ...params, page: pageno })}
           className={
-            " p-2 rounded-sm mr-2 text-white" +
+            " p-2 rounded-sm mr-5 space-y-10 text-white" +
             (pageno === page ? " bg-indigo-400" : " bg-gray-500")
           }
         >
